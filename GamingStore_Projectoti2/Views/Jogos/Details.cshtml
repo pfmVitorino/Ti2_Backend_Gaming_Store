@@ -1,0 +1,44 @@
+﻿@model GamingStore_Projectoti2.Models.Jogos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes</h2>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fotografia)
+        </dt>
+        <dd>
+            <img src="~/fotografias/@Html.DisplayFor(model => model.Fotografia)"
+                 alt="imagem do jogo @Html.DisplayFor(model => model.Nome)"
+                 title="@Html.DisplayFor(model => model.Nome)"
+                 width="150" />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Preco)€
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Plataforma)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Plataforma)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-success" })
+    @Html.ActionLink("Regressar ao Início", "Index", null, new { @class = "btn btn-primary" })
+</p>

@@ -1,0 +1,91 @@
+﻿@model IEnumerable<GamingStore_Projectoti2.Models.Jogos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<center>
+    <h2>Lista de Jogos</h2>
+</center>
+
+
+@using (Html.BeginForm("Index", "Lista", FormMethod.Get))
+{
+
+    <b> Pesquisa por...</b>
+
+    @Html.RadioButton("SearchBy", "Jogo", true) <text>Nome</text>
+    @Html.RadioButton("SearchBy", "Plataforma") <text>Plataforma</text>
+
+
+    <br />
+    @Html.TextBox("search")<input type="submit" value="Pesquisa" />
+}
+
+@foreach (var item in Model)
+{
+    <div class="col-sm-3 special_grid_col">
+        <div class="special_box">
+            <div class="panel panel-info">
+                <div class="panel-heading">@Html.DisplayNameFor(model => model.Nome)</div>
+                <div>@Html.DisplayFor(modelItem => item.Nome)</div>
+                <div> @Html.DisplayFor(modelItem => item.Plataforma)</div>
+                <div>  @Html.DisplayFor(modelItem => item.Preco)€</div>
+                <div class="panel-body"><img src="~/fotografias/@item.Fotografia" width="170" height="170"></div>
+                @Html.ActionLink("Detalhes", "Details", new { id = item.Id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Comprar", "Buy", new { id = item.Id }, new { @class = "btn btn-success" })
+
+            </div>
+
+        </div>
+    </div>
+
+}
+
+
+
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Preco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fotografia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Plataforma)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preco)€
+            </td>
+            <td>*@
+@*Html.DisplayFor(modelItem => item.Fotografia)
+    @*<a href="~/fotografias/@item.Fotografia" target="_blank">*@
+@*<img src="~/fotografias/@item.Fotografia" width="70" height="70" />
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Plataforma)
+                    </td>
+
+
+                    <td>
+                        @Html.ActionLink("Detalhes", "Details", new { id = item.Id }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Comprar", "Buy", new { id = item.Id }, new { @class = "btn btn-success" })
+                    </td>
+                </tr>
+            }
+    </table>*@
+
+

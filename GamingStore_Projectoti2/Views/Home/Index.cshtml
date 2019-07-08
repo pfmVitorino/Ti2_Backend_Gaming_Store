@@ -1,0 +1,185 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<header class="masthead mb-auto" style="margin-bottom:10px !important;">
+
+
+    <style type="text/css">
+        body {
+            background-image: url('/Fotografias/papel.jpg');
+            margin: 0;
+        }
+    </style>
+
+    <!-- todo o CSS da página principal está aqui -->
+    <style .fixedHeightImg>
+        img {
+            max-height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            width: auto;
+        }
+        .btn {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #0C9;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 2px 2px 3px #999;
+        }
+
+        .italic {
+            font-style: italic;
+            text-shadow: 5px 5px 10px green;
+        }
+
+
+
+
+    </style>
+
+
+    <div class="inner">
+
+
+        <center>
+
+            <h5 class="italic" style="font-size: 40px">GAMING STORE</h5>
+        </center>
+        <section id="buttonForm">
+
+            <!-- <table style="float:left" border="1">
+
+            <tr>
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-inline", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <td>
+
+                    <input type="submit" style="width: 100px; height: 50px" class="btn btn-danger" value="Login">
+                </td>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        }
+            </tr>
+            <tr>
+                @using (Html.BeginForm("Register", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-inline", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+
+                <td>
+
+                    <input type="submit" style="width: 100px; height: 50px" class="btn btn-primary" value="Registar">
+                </td>
+                @Html.ValidationSummary(true, "", new { @class = "text-primary" })
+
+        }
+            </tr>
+
+
+
+            <tr>
+
+
+
+                @using (Html.BeginForm("Index", "Lista", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-inline", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+
+                <td>
+
+                    <input type="submit" style="width: 100px; height: 50px" class="btn btn-success" value="Jogos">
+                </td>
+                @Html.ValidationSummary(true, "", new { @class = "text-sucess" })
+
+        }
+
+            </tr>
+        </table>
+        -->
+    </section>
+
+
+
+
+
+
+
+    @using (Html.BeginForm("Index", "Lista", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-inline", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+
+
+
+        <div class="item active btn">
+            <input align="right" type="submit" class="btn btn-primary" value="Jogos">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-primary" })
+        </div>
+
+    }
+
+
+
+
+    <center>
+        <div id="myCarousel" max-width="100px" class="carousel slide" data-ride="carousel">
+            <!-- Indicadores das  imagens -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+                <li data-target="#myCarousel" data-slide-to="5"></li>
+            </ol>
+
+            <!-- slides -->
+            <div class="carousel-inner">
+                <div class="item active fixedHeightImg">
+                    <img src="~/Fotografias/ps44.png">
+                </div>
+
+                <div class="item">
+                    <img src="~/Fotografias/PC.jpg">
+                </div>
+
+                <div class="item">
+                    <img src="~/Fotografias/xbox2.jpg">
+                </div>
+                <div class="item">
+                    <img src="~/Fotografias/giga.jpg">
+                </div>
+                <div class="item">
+                    <img src="~/Fotografias/tap.jpg">
+                </div>
+                <div class="item">
+                    <img src="~/Fotografias/coma.jpg">
+                </div>
+
+            </div>
+
+            <!-- controlo para esquerda e direita -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </center>
+
+    </div>
+</header>
+
+

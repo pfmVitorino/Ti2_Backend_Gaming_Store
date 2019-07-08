@@ -1,0 +1,48 @@
+﻿@model GamingStore_Projectoti2.Models.Compras
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h3>Quer remover esta compra?</h3>
+<div>
+    <h4>Compras</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Clientes.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clientes.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Preco)€
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Remover" class="btn btn-danger" /> 
+            @Html.ActionLink("Voltar", "Index",null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>

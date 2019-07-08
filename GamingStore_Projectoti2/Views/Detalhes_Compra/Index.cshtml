@@ -1,0 +1,55 @@
+﻿@model IEnumerable<GamingStore_Projectoti2.Models.Detalhes_Compra>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>🛒</h2>
+
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Jogos.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Plataformas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Preco)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Jogos.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Plataformas.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preco)€
+            </td>
+            <td>
+
+                @Html.ActionLink("Confirmar Compra", "Index", "Compras", null, new { @class = "btn btn-success" })
+
+                @Html.ActionLink("Cancelar Compra", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

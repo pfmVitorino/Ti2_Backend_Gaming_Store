@@ -1,0 +1,48 @@
+﻿@model GamingStore_Projectoti2.Models.Carrinho
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h3>Deseja remover este jogo do carrinho?</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Jogos.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jogos.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClienteUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClienteUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> 
+            @Html.ActionLink("Carrinho", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>

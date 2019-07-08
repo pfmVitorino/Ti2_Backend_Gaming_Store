@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <style>
+
+        .navbar-fixed-top.navbar-nav.nav-link {
+            color: black;
+        }
+    </style>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: black">
+        <div class="container">
+
+            <ul class="nav navbar-nav">
+                <li class="nav-link">@Html.ActionLink("Página Inicial", "Index", "Home") </li>
+
+                @if (User.IsInRole("Cliente") || User.IsInRole("Gestor") || User.IsInRole("Admin"))
+                {
+
+
+                }
+                else
+                {
+                    <li class="nav-link"> @Html.ActionLink("Registar", "Register", "Account")</li>
+                    <li class="nav-link"> @Html.ActionLink("Log in", "Login", "Account")</li>
+                }
+
+
+                <!--Apenas Clientes podem ter acesso ao carrinho  -->
+                @if (User.IsInRole("Cliente"))
+                {
+                    <li> @Html.ActionLink("Carrinho🛒", "Index", "Carrinho")</li>
+                }
+                <!--Apenas o Admin pode ter acesso a esta página  -->
+                @if (User.IsInRole("Admin"))
+                {
+                    <li> @Html.ActionLink("Administração", "Index", "ApplicationUsers")</li>
+                    <li> @Html.ActionLink("Compras dos Clientes", "Index", "Compras")</li>
+                }
+                <!--Apenas o Gestor pode ter acesso a esta página  -->
+                @if (User.IsInRole("Gestor"))
+                {
+                    <li> @Html.ActionLink("Gestão", "Index", "Jogos")</li>
+                }
+            </ul>
+            <div class="navbar-collapse collapse">
+
+                @Html.Partial("_LoginPartial")
+            </div>
+
+        </div>
+    </div>
+
+
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

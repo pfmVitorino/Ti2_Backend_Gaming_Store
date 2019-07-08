@@ -1,0 +1,62 @@
+﻿@model GamingStore_Projectoti2.Models.Jogos
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Adicionar Jogo</h2>
+@using (Html.BeginForm("Create",
+                        "Jogos",
+                        FormMethod.Post,
+                        new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Jogos</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Preco, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Preco, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Preco, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Plataforma, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.Plataforma, new SelectList(ViewBag.Plataformas, "Nome", "Nome"),
+                                                        "Escolha a Plataforma", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Plataforma, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Fotografia, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @* Adição do objeto para fazer o file upload de uma fotografia sss*@
+                @*@Html.EditorFor(model => model.Fotografia, new { htmlAttributes = new { @class = "form-control" } })*@
+                <input type="file" name="uploadFotografia" style="color:blue" accept=".jpg,.png">
+                @Html.ValidationMessageFor(model => model.Fotografia, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Adicionar" class="btn btn-success" />
+                @Html.ActionLink("Regressar ao Início", "Index", null, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    </div>
+}
+<div>
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

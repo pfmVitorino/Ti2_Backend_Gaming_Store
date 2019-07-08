@@ -1,0 +1,58 @@
+﻿@model GamingStore_Projectoti2.Models.Detalhes_Compra
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Detalhes_Compra</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Compras.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Compras.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Jogos.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jogos.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plataformas.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plataformas.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
