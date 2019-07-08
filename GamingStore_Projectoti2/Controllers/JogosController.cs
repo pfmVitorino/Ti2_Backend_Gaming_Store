@@ -307,7 +307,7 @@ namespace GamingStore_Projectoti2.Controllers
             }
 
             /// para o caso do utilizador alterar, de forma fraudulenta,
-            /// os dados do Agente, vamos guardá-los internamente
+            /// os dados do Jogo, vamos guardá-los internamente
             /// Para isso, vou guardar o valor do ID do Jogo
             /// - guardar o ID do Jogo num cookie cifrado
             /// - guardar o ID numa var. de sessão 
