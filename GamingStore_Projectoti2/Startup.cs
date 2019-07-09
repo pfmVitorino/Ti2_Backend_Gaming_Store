@@ -21,7 +21,7 @@ namespace GamingStore_Projectoti2
 
 
         /// <summary>
-        /// cria, caso não existam, as Roles de suporte à aplicação: Agente, Funcionario, Condutor
+        /// cria, caso não existam, as Roles de suporte à aplicação: Cliente, Gestor, Admin
         /// cria, nesse caso, também, um utilizador...
         /// </summary>
         private void iniciaAplicacao()
@@ -93,7 +93,7 @@ namespace GamingStore_Projectoti2
             string userPWD1 = "123_Asd";
         var chkUser1 = userManager.Create(user1, userPWD1);
 
-            //Adicionar o Utilizador à respetiva Role-Agente
+            //Adicionar o Utilizador à respetiva Role-Admin
             if (chkUser1.Succeeded)
             {
                 var result = userManager.AddToRole(user1.Id, "Admin");

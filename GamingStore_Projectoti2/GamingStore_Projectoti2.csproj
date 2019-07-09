@@ -193,7 +193,6 @@
     <Compile Include="Controllers\ApplicationUsersController.cs" />
     <Compile Include="Controllers\CarrinhoController.cs" />
     <Compile Include="Controllers\ComprasController.cs" />
-    <Compile Include="Controllers\Detalhes_CompraController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JogosController.cs" />
     <Compile Include="Controllers\ListaController.cs" />
@@ -211,7 +210,6 @@
     <Compile Include="Models\Jogos.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Plataformas.cs" />
-    <Compile Include="Models\Plataforma_Jogos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -309,11 +307,6 @@
     <Content Include="Views\ApplicationUsers\Delete.cshtml" />
     <Content Include="Views\ApplicationUsers\Details.cshtml" />
     <Content Include="Views\ApplicationUsers\Index.cshtml" />
-    <Content Include="Views\Detalhes_Compra\Create.cshtml" />
-    <Content Include="Views\Detalhes_Compra\Delete.cshtml" />
-    <Content Include="Views\Detalhes_Compra\Details.cshtml" />
-    <Content Include="Views\Detalhes_Compra\Edit.cshtml" />
-    <Content Include="Views\Detalhes_Compra\Index.cshtml" />
     <Content Include="Views\Compras\Create.cshtml" />
     <Content Include="Views\Compras\Delete.cshtml" />
     <Content Include="Views\Compras\Details.cshtml" />

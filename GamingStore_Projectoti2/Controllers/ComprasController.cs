@@ -14,25 +14,32 @@ namespace GamingStore_Projectoti2.Controllers
     public class ComprasController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
+        /// <summary>
+        /// aqui é onde o administrador pode ver todas as compras feitas na loja
+        /// </summary>
+        /// <returns></returns>
         // GET: Compras
         public ActionResult Index()
         {
             var compras = db.Compras.Include(c => c.Clientes);
             return View(compras.ToList());
         }
-
+        /// <summary>
+        /// Todos os detalhes de uma compra estão qui presentes
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // GET: Compras/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Index");
             }
             Compras compras = db.Compras.Find(id);
             if (compras == null)
             {
-                return HttpNotFound();
+                return RedirectToAction("Index");
             }
             return View(compras);
         }
@@ -67,12 +74,12 @@ namespace GamingStore_Projectoti2.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Index");
             }
             Compras compras = db.Compras.Find(id);
             if (compras == null)
             {
-                return HttpNotFound();
+                return RedirectToAction("Index");
             }
             ViewBag.ClientesFK = new SelectList(db.Clientes, "Id", "Nome", compras.ClientesFK);
             return View(compras);
@@ -94,18 +101,22 @@ namespace GamingStore_Projectoti2.Controllers
             ViewBag.ClientesFK = new SelectList(db.Users, "Id", "Nome", compras.ClientesFK);
             return View(compras);
         }
-
+        /// <summary>
+        /// Caso o admin pretenda remover alguma compra
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // GET: Compras/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Index");
             }
             Compras compras = db.Compras.Find(id);
             if (compras == null)
             {
-                return HttpNotFound();
+                return RedirectToAction("Index");
             }
             return View(compras);
         }

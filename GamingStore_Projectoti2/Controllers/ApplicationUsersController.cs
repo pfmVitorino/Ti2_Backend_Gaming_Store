@@ -29,7 +29,11 @@ namespace GamingStore_Projectoti2.Controllers
         {
             return View(db.Users.ToList());
         }
-
+        /// <summary>
+        /// O admin pode ver todos os detalhes dos clientes
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // GET: ApplicationUsers/Details/5
         public ActionResult Details(string id)
         {
@@ -47,7 +51,12 @@ namespace GamingStore_Projectoti2.Controllers
 
 
        
-
+        /// <summary>
+        /// O admin pode apagar o cliente da loja
+        /// primeiro apaga a role, depois apagan o user
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // GET: ApplicationUsers/Delete/5
         public ActionResult Delete(string id)
         {
@@ -62,7 +71,11 @@ namespace GamingStore_Projectoti2.Controllers
             }
             return View(applicationUser);
         }
-
+        /// <summary>
+        /// aqui é onde o admin confirma a remoção do user
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // POST: ApplicationUsers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

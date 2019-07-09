@@ -19,35 +19,35 @@
 
             <ul class="nav navbar-nav">
                 <li class="nav-link">@Html.ActionLink("Página Inicial", "Index", "Home") </li>
-
+                <!--Os links de login e registar só aparecem caso o utilizador nao esteja autenticado ou não pertenca a alguma destas roles  -->
                 @if (User.IsInRole("Cliente") || User.IsInRole("Gestor") || User.IsInRole("Admin"))
-                {
+    {
 
 
-                }
-                else
-                {
-                    <li class="nav-link"> @Html.ActionLink("Registar", "Register", "Account")</li>
-                    <li class="nav-link"> @Html.ActionLink("Log in", "Login", "Account")</li>
-                }
+    }
+    else
+    {
+            <li class="nav-link"> @Html.ActionLink("Registar", "Register", "Account")</li>
+            <li class="nav-link"> @Html.ActionLink("Log in", "Login", "Account")</li>
+}
 
 
                 <!--Apenas Clientes podem ter acesso ao carrinho  -->
                 @if (User.IsInRole("Cliente"))
-                {
-                    <li> @Html.ActionLink("Carrinho🛒", "Index", "Carrinho")</li>
-                }
+    {
+            <li> @Html.ActionLink("Carrinho🛒", "Index", "Carrinho")</li>
+}
                 <!--Apenas o Admin pode ter acesso a esta página  -->
                 @if (User.IsInRole("Admin"))
-                {
-                    <li> @Html.ActionLink("Administração", "Index", "ApplicationUsers")</li>
-                    <li> @Html.ActionLink("Compras dos Clientes", "Index", "Compras")</li>
-                }
+    {
+            <li> @Html.ActionLink("Administração", "Index", "ApplicationUsers")</li>
+            <li> @Html.ActionLink("Compras dos Clientes", "Index", "Compras")</li>
+}
                 <!--Apenas o Gestor pode ter acesso a esta página  -->
                 @if (User.IsInRole("Gestor"))
-                {
-                    <li> @Html.ActionLink("Gestão", "Index", "Jogos")</li>
-                }
+    {
+            <li> @Html.ActionLink("Gestão", "Index", "Jogos")</li>
+}
             </ul>
             <div class="navbar-collapse collapse">
 

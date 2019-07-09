@@ -285,7 +285,7 @@ namespace GamingStore_Projectoti2.Controllers
 
                 /// e não há ID do Jogo, uma de duas coisas aconteceu:
                 ///   - há um erro nos links da aplicação
-                ///   - há um 'chico experto' a fazer asneiras no URL
+                ///   - Alguem a fazer asneiras no URL
 
                 /// redireciono o utilzador para o ecrã incial
                 return RedirectToAction("Index");
@@ -299,7 +299,7 @@ namespace GamingStore_Projectoti2.Controllers
             if (jogo == null)
             {
                 // ou há um erro,
-                // ou há um 'chico experto'...
+                // ou há um alguem a tentar mexer no url
                 //   return HttpNotFound();
 
                 /// redireciono o utilzador para o ecrã incial

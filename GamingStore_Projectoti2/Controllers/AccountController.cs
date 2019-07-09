@@ -159,7 +159,11 @@ namespace GamingStore_Projectoti2.Controllers
         {
             return View();
         }
-
+        /// <summary>
+        /// Aqui é onde um utilizar cria conta para ser cliente da apliacação
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         //
         // POST: /Account/Register
         [HttpPost]
@@ -173,6 +177,7 @@ namespace GamingStore_Projectoti2.Controllers
             {
                 var user = new ApplicationUser
                 {
+                    // todos os dados para o cliente preencher
                     UserName = model.Email,
                     Email = model.Email,
                     Nome = model.Nome,

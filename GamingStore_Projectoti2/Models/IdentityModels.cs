@@ -12,7 +12,7 @@ namespace GamingStore_Projectoti2.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-
+        // atributos dos clientes
         public string Nome { get; set; }
 
 
@@ -28,9 +28,9 @@ namespace GamingStore_Projectoti2.Models
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
-            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+          
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-            // Add custom user claims here
+        
             return userIdentity;
         }
     }
@@ -56,7 +56,6 @@ namespace GamingStore_Projectoti2.Models
         public DbSet<Jogos> Jogos { get; set; }
         public DbSet<Plataformas> Plataformas { get; set; }
         public DbSet<Compras> Compras { get; set; }
-        public DbSet<Plataforma_Jogos> Plataforma_Jogos { get; set; }
         public DbSet<Detalhes_Compra> Detalhes_Compra { get; set; }
 
 
